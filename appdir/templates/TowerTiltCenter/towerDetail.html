@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="../static/script/towerCenter.js"></script>
+<div class="container" style="margin-top:150px">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <div class="container">
+                <h1>杆塔过往倾斜数据 </h1>
+
+                <h2>{% if not towerTilt%}暂无数据——{% endif %}
+                    <a href="/towerTiltForm{{tower.id}}">添加杆塔数据</a></h2>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>测量时间</th>
+                        <th>倾斜度</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in towerTilt %}
+                    <tr>
+                        <td>{{ item.datetime }}</td>
+                        <td>{{ item.towerTilt }}</td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

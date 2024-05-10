@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="../static/script/forum.js"></script>
+<link href="../static/css/forum.css" media="all" rel="stylesheet" type="text/css">
+<div class="container">
+    <h1 style="margin-top:150px;margin-left:30px;">答疑平台</h1>
+    <div class="forum-container">
+        <div class="left_row">
+            <div class="navi-forum"></div>
+            <div class="forum-info">
+                {% if not questions%}
+                <p class="card-text" style="margin-top: 20px;">暂时尚未咨询</p>
+                {% endif %}
+                {% for question in questions %}
+                <div class="forum-msg">
+                    <div class="photo-and-name">
+                        <div class="photo">
+                            <img alt=""
+                                 loading="lazy" src="../static/image/bootstrap-icon/person-fill.svg" style="width:50px;height:50px;">
+                        </div>
+                        <div class="name">匿名</div>
+                    </div>
+                    <div class="content">
+                        <div class="title">{{ question.title }}</div>
+                        <div class="text" id={{ question.id }}>{{ question.question }}</div>
+                        <div class="tip">
+                            <a class="showMore" id="tips" onclick="expand(this,{{ question.id }})">展开</a>
+                        </div>
+                        <div class="otherItem">
+                            <p class="time" style="font-size:15px;">{{ question.time }}</p>
+                            {{ question.datetime }}
+                            <a class="check-answer" href="/question{{ question.id }}">查看回答</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="right_row">
+            <div class="news-info">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

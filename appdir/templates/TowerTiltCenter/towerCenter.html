@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="../static/script/towerCenter.js"></script>
+<link href="../static/css/forum.css" media="all" rel="stylesheet" type="text/css">
+<div class="container">
+    <h1 style="margin-top:150px;margin-left:30px;">
+        <div><a href="/addTower">添加新的杆塔</a></div>
+
+    </h1>
+
+
+    <div class="forum-container">
+        <div class="left_row">
+            <div class="navi-forum"></div>
+            <div class="forum-info">
+                {% for tower in towers %}
+                <div class="forum-msg">
+                    <div class="content">
+                        <div class="title">杆塔id： {{ tower.id }}</div>
+                        <div class="text">名字： {{ tower.name }}</div>
+                        <div class="text" id={{ tower.id }}>描述：{{ tower.description }}</div>
+                        <div class="otherItem">
+                            <p class="time" style="font-size:15px;"></p>
+                            <a class="check-answer" href="/towerDetail{{ tower.id }}">查看杆塔</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="right_row">
+            <div class="news-info">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

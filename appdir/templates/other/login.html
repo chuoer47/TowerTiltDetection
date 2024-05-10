@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- carousel CSS -->
+<link href="../../static/css/owl.carousel.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- nivo-slider CSS -->
+<link href="../../static/css/nivo-slider.css" media="all" rel="stylesheet" type="text/css">
+<!-- animate CSS -->
+<link href="../../static/css/animate.css" media="all" rel="stylesheet" type="text/css">
+<!-- animated-text CSS -->
+<link href="../../static/css/all.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- font-flaticon CSS -->
+<link href="../../static/css/flaticon.css" media="all" rel="stylesheet" type="text/css">
+<!-- theme-default CSS -->
+<link href="../../static/css/theme-default.css" media="all" rel="stylesheet" type="text/css">
+<!-- meanmenu CSS -->
+<link href="../../static/css/meanmenu.min.css" media="all" rel="stylesheet" type="text/css">
+<link href="../../static/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- Main Style CSS -->
+<link href="../../static/css/style.css" media="all" rel="stylesheet" type="text/css">
+<!-- transitions CSS -->
+<link href="../../static/css/owl.transitions.css" media="all" rel="stylesheet" type="text/css">
+<!-- venobox CSS -->
+<link href="../../static/css/venobox.css" media="all" rel="stylesheet" type="text/css">
+<!-- widget CSS -->
+<link href="../../static/css/widget.css" media="all" rel="stylesheet" type="text/css">
+<!-- responsive CSS -->
+<link href="../../static/css/responsive.css" media="all" rel="stylesheet" type="text/css">
+<!-- modernizr js -->
+<script src="js/modernizr-3.5.0.min.js"></script>
+<script src="../../static/script/login.js"></script>
+<link href='../../static/css/css.css' rel='stylesheet' type='text/css'>
+<link href="../../static/css/animated-text.css" media="all" rel="stylesheet" type="text/css">
+<!-- font-awesome CSS -->
+<div class="login-section d-flex align-items-center" style="margin-top:150px">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="single-login">
+                    <div class="login-title">
+                        <h1>欢迎注册</h1>
+                    </div>
+                    <div class="login-disaription">
+                        <p>永远面朝阳光——阴影就会落在你身后。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="single_login">
+                    <div class="login-title"><h3>登录</h3></div>
+                    <div class="login-text"><p>请登录您的账户以继续。</p> {% for message in get_flashed_messages() %}
+                        {% if message %}
+                        <div style="color:red">{{ message }}</div>
+                        {% endif %} {% endfor %}
+                    </div>
+                    <div class="row">
+                        <form action="/login" id="loginForm" method="post" novalidate role="form">
+                            <div class="col-lg-12">
+                                <div class="form-text"><p>个人账户</p></div>
+                                <div class="form_box"><input id="username" name="username" placeholder="请输入您的账号"
+                                                             type="text"> <span><i
+                                        class="bi bi-envelope"></i></span></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-text"><p>密码</p></div>
+                                <div class="form_box"><input id="password" name="password" placeholder="请输入您的密码"
+                                                             type="password"> <span><i
+                                        class="bi bi-lock"></i></span></div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-submit"><input class="loginBTN" id="submit" name="submit"
+                                                                type="submit" value="登录"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="status"></div>
+                    <div class="login_bottom">
+                        <div class="bottom-text"><h5>还没有账号？<a href="/register">创建账户</a></h5></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .loginBTN {
+        width: 460px;
+        height: 50px;
+        color: white;
+        font-size: 20px;
+        background-color: rgb(52, 146, 252);
+        border-radius: 10px;
+        border: none;
+    }
+
+    .loginBTN:hover {
+        font-size: 25px;
+        background-color: rgb(96, 166, 232);
+    }
+</style>
+
+{% endblock %}
+
+

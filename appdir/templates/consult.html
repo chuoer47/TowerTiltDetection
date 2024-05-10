@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<script src="../static/script/consult.js"></script>
+<link href="../static/css/owl.carousel.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- nivo-slider CSS -->
+<link href="../static/css/nivo-slider.css" media="all" rel="stylesheet" type="text/css">
+<!-- animate CSS -->
+<link href="../static/css/animate.css" media="all" rel="stylesheet" type="text/css">
+<!-- animated-text CSS -->
+<link href="../static/css/all.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- font-flaticon CSS -->
+<link href="../static/css/flaticon.css" media="all" rel="stylesheet" type="text/css">
+<!-- theme-default CSS -->
+<link href="../static/css/theme-default.css" media="all" rel="stylesheet" type="text/css">
+<!-- meanmenu CSS -->
+<link href="../static/css/meanmenu.min.css" media="all" rel="stylesheet" type="text/css">
+<link href="../static/css/font-awesome.min.css" media="all" rel="stylesheet" type="text/css">
+<!-- Main Style CSS -->
+<link href="../static/css/style.css" media="all" rel="stylesheet" type="text/css">
+<!-- transitions CSS -->
+<link href="../static/css/owl.transitions.css" media="all" rel="stylesheet" type="text/css">
+<!-- venobox CSS -->
+<link href="../static/css/venobox.css" media="all" rel="stylesheet" type="text/css">
+<!-- widget CSS -->
+<link href="../static/css/widget.css" media="all" rel="stylesheet" type="text/css">
+<!-- responsive CSS -->
+<link href="../static/css/responsive.css" media="all" rel="stylesheet" type="text/css">
+<link href='../static/css/css.css' rel='stylesheet' type='text/css'>
+<link href="../static/css/animated-text.css" media="all" rel="stylesheet" type="text/css">
+<script>
+    function clearForm() {
+        document.getElementById("questionForm").reset();
+    }
+</script>
+<div class="row clearfix"
+     style="height:800px;background:linear-gradient(to bottom, rgba(27, 101, 185, 0.3), rgba(27, 101, 185, 0));">
+    <div class="container" style="margin-top:150px;">
+        <div class="row align-items-center" style="display:flex;justify-content: center;align-items: center;">
+            <div class="col-lg-6" style="width:1000px">
+                <div class="single_login" style="background-color:white;margin-top:50px;">
+                    <div class="login-title"><h3>咨询</h3></div>
+                    <div class="login-text"><p>如有任何关于杆塔倾斜问题，请咨询我们</p> {% for message in
+                        get_flashed_messages() %}
+                        {% if message %}
+                        <div style="color:red">{{ message }}</div>
+                        {% endif %} {% endfor %}
+                    </div>
+                    <div class="row">
+                        <form action="/consult" id="questionForm" method="post" novalidate role="form">
+                            <div class="col-lg-12">
+                                <div class="form_box"><label for="title">标题</label> <input %} %}
+                                                                                             %}readonly{%
+                                                                                             %}value="{{ title }}"
+                                                                                             endif endif id="title"
+                                                                                             if if
+                                                                                             name="title" placeholder="例如：杆塔倾斜危害" title title type="text"
+                                                                                             {% {% {%>
+                                    <span><i class="bi bi-envelope"></i></span></div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form_box"><label for="question">问题</label> <textarea %}
+                                                                                                   %}readonly{%
+                                                                                                   endif id="question" if
+                                                                                                   name="question" placeholder="请输入您的问题"
+                                                                                                   question rows="7"
+                                                                                                   {%>{{ question }}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-submit"
+                                     style="display:flex;justify-content: center;align-items: center;">
+                                    <button class="submitBTN" type="submit">提交</button>
+                                    <button class="clearBTN" onclick="clearForm()" type="button">清空</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+    .submitBTN {
+        font-size: 22px;
+        color: white;
+        background-color: rgb(52, 146, 252);
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-left: 50px;
+        border: none;
+    }
+
+    .submitBTN:hover {
+        font-size: 27px;
+        background-color: rgb(96, 166, 232);
+    }
+
+    .clearBTN {
+        font-size: 22px;
+        color: white;
+        background-color: rgb(52, 146, 252);
+        width: 200px;
+        height: 50px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        margin-left: 50px;
+        border: none;
+    }
+
+    .clearBTN:hover {
+        font-size: 27px;
+        background-color: rgb(96, 166, 232);
+    }
+</style>
+
+{% endblock %}

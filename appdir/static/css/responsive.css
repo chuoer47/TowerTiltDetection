@@ -1,0 +1,1280 @@
+/* Normal desktop :1700px. */
+@media (min-width: 1700px) and (max-width: 1920px) {
+
+
+}
+
+/* Normal desktop :1500px. */
+@media (min-width: 1500px) and (max-width: 1700px) {
+    .sticky-nav .search-box-btn.search-box-outer i {
+        left: 15px;
+    }
+
+
+}
+
+/* Normal desktop :1200px. */
+@media (min-width: 1365px) and (max-width: 1499px) {
+    .sticky-nav .search-box-btn.search-box-outer i {
+        left: -25px;
+        color: #2c2c51;
+    }
+
+
+}
+
+/* Normal desktop :1170px. */
+@media (min-width: 1170px) and (max-width: 1299px) {
+    .pricing-area .pricing-text p {
+        font-size: 14px;
+    }
+
+    .pricing-area .pricing-icon-list ul li {
+        font-size: 15px;
+    }
+
+    .pricing-area .pricing-button a {
+        padding: 13px 60px;
+        font-size: 15px;
+
+    }
+
+    .call-do-action .sub-title p {
+        font-size: 14px;
+    }
+
+    .pricing-area .pricing-text p {
+        font-size: 14px;
+    }
+
+    .choose-us-discription p {
+        font-size: 15px;
+    }
+
+    .footer-discription p {
+        font-size: 14px;
+    }
+
+
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1170px) {
+    .choose-us-thumb img {
+        width: 100%;
+    }
+
+    .main-header {
+        padding: 0 20px 15px;
+    }
+
+    .heder-menu ul li a {
+        padding: 30px 10px 18px;
+    }
+
+    .header-button a {
+        padding: 10px 20px;
+    }
+
+    .header-button {
+        position: relative;
+        right: -25px;
+    }
+
+    .header_tbn a {
+        display: none;
+    }
+
+    .heder-menu ul li.icon::before {
+        right: -6px;
+    }
+
+    .slider-title h1 {
+        font-size: 50px;
+        line-height: 70px;
+    }
+
+    .main-title h1 {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    .about-discription p {
+        font-size: 15px;
+    }
+
+    .about-thumb img {
+        width: 100%;
+    }
+
+    .testimonial-area .testi-discription p {
+        font-size: 13px;
+        line-height: 25px;
+    }
+
+    .subscribe-area .sub-title p {
+        width: 60%;
+    }
+
+    .blog-title h2 a {
+        font-size: 17px;
+    }
+
+    .service-area.style-two .service-title h3 {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+
+    .service-area.style-two .single-service-box {
+        padding: 40px 12px 35px;
+    }
+
+    .sub-title p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .single-counter {
+        padding: 60px 18px 50px;
+    }
+
+    .feature-thumb img {
+        width: 100%;
+    }
+
+    .quote-text p {
+        font-size: 18px;
+    }
+
+    .pricing-area .pricing-icon-list ul li {
+        font-size: 15px;
+    }
+
+    .pricing-area .pricing-button a {
+        padding: 13px 50px;
+    }
+
+    .call-do-action .sub-title p {
+        font-size: 15px;
+        width: 60%;
+    }
+
+    .blog-area.style-one .blog-title h2 a {
+        font-size: 24px;
+    }
+
+    .resent-title a h3 {
+        font-size: 13px;
+    }
+
+    .blog-area.style-two .blog-title h2 a {
+        font-size: 28px;
+    }
+
+    .pricing-area .pricing-text p {
+        font-size: 14px;
+    }
+
+    .login-section .form-button button {
+        padding: 14px 140px;
+    }
+
+    .our-cards-section .single_cards .cards-thumb {
+        left: 0;
+    }
+
+    .slider-discription p {
+        width: 68%;
+    }
+
+    .slider-area .hape-img {
+        bottom: -80%;
+    }
+
+    .our-cards-section .single_cards .card-animation {
+        left: 0;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        left: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .sub-title p {
+        width: 60%;
+    }
+
+    .footer-discription p {
+        font-size: 13px;
+    }
+
+    .slider-title h2::before {
+        left: -15px;
+    }
+
+    .slider-discription p {
+        width: 100%;
+    }
+
+    .it-solution-service-area .service-discription p {
+        font-size: 15px;
+    }
+
+    .it-solution-about-area .about-number span {
+        font-size: 14px;
+    }
+
+
+}
+
+/* small mobile :768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .choose-us-thumb img {
+        width: 100%;
+    }
+
+    .slider-title h1 {
+        font-size: 50px;
+        line-height: 65px;
+    }
+
+    .slider-discription p {
+        width: 100%;
+        text-align: left;
+    }
+
+    .slider-title h2 {
+        text-align: left;
+    }
+
+    .slider-title h2::before {
+        background: inherit;
+    }
+
+    .slider-thumb img {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .main-title h1 {
+        font-size: 38px;
+        line-height: 50px;
+    }
+
+    .service-discription p {
+        font-size: 15px;
+    }
+
+    .about-thumb img {
+        width: 100%;
+    }
+
+    .main-title h1 {
+        font-size: 27px;
+        line-height: 40px;
+    }
+
+    .it-solution-about-area .main-title h1 {
+        text-align: left;
+        font-size: 26px;
+    }
+
+    .sub-title p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .about-discription p {
+        font-size: 11px;
+        line-height: 25px;
+    }
+
+    .choose-us-discription p {
+        font-size: 11px;
+        line-height: 25px;
+    }
+
+    .subscribe-area .sub-title p {
+        width: 70%;
+        text-align: center;
+        margin: 15px auto 0;
+    }
+
+    .feature-thumb {
+        left: 0;
+        margin-top: 60px;
+    }
+
+    .mission-thumb {
+        margin-top: 100px;
+    }
+
+    .quote-text p {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .team-intro-thumb {
+        margin-top: 50px;
+    }
+
+    .pricing-area .pricing-button a {
+        padding: 13px 60px;
+    }
+
+    .call-do-action .sub-title p {
+        font-size: 14px;
+        width: 70%;
+    }
+
+    .single-process::before {
+        width: 55%;
+    }
+
+    .mission-area {
+        padding: 0 0 90px;
+    }
+
+    .mission-area.style-two .mission-thumb {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .mission-area.style-two .mission-thumb img {
+        width: 80%;
+    }
+
+    .managing-thumb {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .managing-thumb img {
+        width: 80%;
+    }
+
+    .blog-area.style-one .blog-title h2 a {
+        font-size: 20px;
+    }
+
+    .resent-title a h3 {
+        font-size: 15px;
+    }
+
+    .blog-area.style-two .blog-title h2 a {
+        font-size: 25px;
+    }
+
+    .blog-area.style-two .blog-discription p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .blog-area.style-two .blog-text p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .blog-area.style-two .blogs-titles h2 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .blog-area.style-two .blog-tab ul li a {
+        margin-right: 0;
+        padding: 5px 6px;
+    }
+
+    .company-info-section .form-button button {
+        margin-bottom: 50px;
+    }
+
+    .single_login {
+        margin-top: 30px;
+    }
+
+    .card-animation img {
+        width: 70%;
+    }
+
+    .cards-thumb img {
+        width: 100%;
+    }
+
+    .our-cards-section .single_cards .card-left-img {
+        bottom: 70px;
+        right: -76px;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        top: 44px;
+        left: 79px;
+    }
+
+    .our-cards-section .single_cards .card-left-img {
+        display: none;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        display: none;
+    }
+
+    .our-cards-section .single_cards .cards-thumb {
+        left: 0;
+    }
+
+    .slider-area .hape-img {
+        bottom: -80%;
+    }
+
+    .single-counter-box {
+        margin-bottom: 30px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_tmb {
+        top: 25px;
+        left: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about-discription p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+    .our-cards-section .cards-discription p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .sub-title p {
+        width: 77%;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .location-thumb-1 {
+        right: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .location-thumb-2 {
+        left: 0;
+    }
+
+    .it-solution-brand-area .brand-title h3 {
+        text-align: center;
+    }
+
+    .it-solution-brand-area .brand-title h3::before {
+        left: 80px;
+    }
+
+    .section-discription p {
+        font-size: 15px;
+    }
+
+    .testimonial-thumb img {
+        width: 100%;
+    }
+
+    .it-solution-testimonial-area .testimonial-text h3 {
+        font-size: 19px;
+    }
+
+
+}
+
+/* small mobile :600px. */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    .slider-title h1 {
+        font-size: 38px;
+        line-height: 55px;
+    }
+
+    .choose-us-thumb img {
+        width: 100%;
+        margin-top: 75px;
+    }
+
+    .slider-discription p {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .slider-thumb img {
+        width: 90%;
+        margin-top: 50px;
+    }
+
+    .main-title h1 {
+        font-size: 28px;
+        line-height: 40px;
+    }
+
+    .sub-title p {
+        font-size: 15px;
+    }
+
+    .subscribe-area .sub-title p {
+        width: 96%;
+        margin: 15px auto 0;
+    }
+
+    .subscribe-area .form-button {
+        right: 8%;
+    }
+
+    .blog-content {
+        margin-bottom: 35px;
+    }
+
+    .copyright-title {
+        text-align: center;
+    }
+
+    .mission-thumb {
+        margin-top: 100px;
+    }
+
+    .feature-thumb {
+        left: 0;
+        top: 40px;
+    }
+
+    .quote-text p {
+        font-size: 16px;
+        line-height: 25px;
+        width: 100%;
+    }
+
+    .widgets-company-information {
+        margin-bottom: 40px;
+    }
+
+    .team-intro-thumb {
+        margin-top: 50px;
+    }
+
+    .single-pricing.style-two {
+        top: 0;
+    }
+
+    .faq-area .accordion p {
+        font-size: 13px;
+    }
+
+    .call-do-action .sub-title p {
+        font-size: 12px;
+        line-height: 25px;
+        width: 80%;
+    }
+
+    .single-process::before {
+        width: 36%;
+    }
+
+    .managing-thumb {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .mission-area.style-two .mission-thumb {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .mission-area {
+        padding: 0 0 90px;
+    }
+
+    .missions-content .mission-discription p {
+        font-size: 15px;
+    }
+
+    .blog-area.style-one .blog-title h2 a {
+        font-size: 20px;
+    }
+
+    .blog-number {
+        margin-bottom: 50px;
+    }
+
+    .blog-area.style-two .blogs-titles h2 {
+        font-size: 30px;
+    }
+
+    .blog-area.style-two .blog-icon-list ul li {
+        font-size: 15px;
+    }
+
+    .blog-area.style-two .form-button button {
+        margin-bottom: 50px;
+    }
+
+    .single_login {
+        margin-top: 30px;
+    }
+
+    .login-section .form-button button {
+        padding: 14px 150px;
+    }
+
+    .card-animation img {
+        width: 70%;
+    }
+
+    .cards-thumb img {
+        width: 100%;
+    }
+
+    .our-cards-section .single_cards .card-left-img {
+        bottom: 70px;
+        right: -76px;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        top: 44px;
+        left: 79px;
+    }
+
+    .our-cards-section .single_cards .card-left-img {
+        display: none;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        display: none;
+    }
+
+    .our-cards-section .single_cards .cards-thumb {
+        left: 0;
+    }
+
+    .slider-area .hape-img {
+        bottom: -80%;
+    }
+
+    .single-counter-box {
+        margin-bottom: 30px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_tmb {
+        top: 25px;
+        left: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about-discription p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+    .our-cards-section .cards-discription p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .sub-title p {
+        width: 77%;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .location-thumb-1 {
+        right: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .location-thumb-2 {
+        left: 0;
+    }
+
+    .slider-area .hape-img-two {
+        display: none;
+    }
+
+    .slider-area .hape-img {
+        bottom: -95%;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_tmb {
+        top: 51px;
+        left: 51px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_thumb {
+        bottom: 70px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-brand-section .single-brand {
+        text-align: center;
+    }
+
+    .our-cards-section .card-button {
+        margin-bottom: 50px;
+    }
+
+    .single-transaction .transaction-tmb {
+        margin-left: 0;
+    }
+
+    .subscribe-area.upper .row.bg .form_box input {
+        width: 70%;
+    }
+
+    .subscribe-area.upper .row.bg .form-button {
+        right: 19%;
+    }
+
+    .subscribe-area.upper .row.bg {
+        padding: 35px 0 35px;
+    }
+
+    .footer-area {
+        padding: 110px 0 0;
+    }
+
+    .it-solution-supports-section .supports-thumb img {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .accordion a {
+        font-size: 19px;
+    }
+
+
+}
+
+/* small mobile :320px. */
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+    .choose-us-thumb img {
+        width: 100%;
+    }
+
+    .about-thumb img {
+        width: 100%;
+    }
+
+    .slider-title h1 {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .slider-thumb img {
+        width: 80%;
+    }
+
+    .slider-thumb img {
+        display: none;
+    }
+
+    .slider-discription p {
+        font-size: 12px;
+        line-height: 23px;
+        width: 100%;
+    }
+
+    .slider-button a {
+        font-size: 12px;
+        padding: 18px 45px 18px 15px;
+    }
+
+    .main-title h1 {
+        font-size: 23px;
+        line-height: 40px;
+    }
+
+    .subscribe-area.upper .main-title h1 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .service-discription p {
+        font-size: 13px;
+        line-height: 23px;
+    }
+
+    .about-area .main-title h1 {
+        font-size: 23px;
+        line-height: 35px;
+    }
+
+    .sub-title p {
+        font-size: 12px;
+        line-height: 23px;
+    }
+
+    .about-discription p {
+        font-size: 9px;
+        line-height: 20px;
+    }
+
+    .why-choose-us .main-title h1 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+
+    .choose-us-discription p {
+        font-size: 9px;
+        line-height: 20px;
+    }
+
+    .choose-us-thumb img {
+        width: 100%;
+        margin-top: 65px;
+    }
+
+    .testimonial-area .main-title h1 {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .testimonial-area .owl-nav .owl-prev {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        left: 19px;
+        top: 31px;
+        position: relative;
+    }
+
+    .testimonial-area .owl-nav .owl-next {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        margin-top: -10px;
+    }
+
+    .testimonial-area .testi-discription p {
+        font-size: 12px;
+        line-height: 23px;
+    }
+
+    .subscribe-area .sub-title p {
+        width: 100%;
+    }
+
+    .blog-content {
+        margin-bottom: 50px;
+    }
+
+    .blog-title h2 a {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+    .footer-discription p {
+        margin: 34px 0 50px;
+    }
+
+    .copyright-title {
+
+        text-align: center;
+    }
+
+    .mission-thumb img {
+        width: 100%;
+    }
+
+    .feature-thumb img {
+        width: 100%;
+    }
+
+    .feature-thumb {
+        left: 0;
+        top: 40px;
+    }
+
+    .mission-discription p {
+        font-size: 12px;
+        line-height: 22px;
+        width: 86%;
+    }
+
+    .mission-thumb {
+        margin-top: 95px;
+    }
+
+    .mission-button {
+        text-align: center;
+    }
+
+    .service-area.style-two .main-title h1 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .mission-area .main-title h1 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .counter-area .main-title h1 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+
+    .counter-area {
+        padding: 95px 0 5px;
+    }
+
+    .feature-area .main-title h1 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    .quote-text p {
+        font-size: 16px;
+        line-height: 25px;
+        width: 100%;
+    }
+
+    .team-intro-area .main-title h1 {
+        font-size: 27px;
+        line-height: 35px;
+    }
+
+    .intro-icon ul li {
+        font-size: 11px;
+        line-height: 20px;
+    }
+
+    .team-intro-thumb {
+        margin-top: 50px;
+    }
+
+    .pricing-area .pricing-text p {
+        font-size: 14px;
+    }
+
+    .pricing-area .pricing-icon-list ul li {
+        font-size: 14px;
+    }
+
+    .pricing-area .pricing-button a {
+        padding: 13px 50px;
+        font-size: 15px;
+    }
+
+    .single-pricing.style-two {
+        top: 0;
+    }
+
+    .faq-area .accordion a {
+        font-size: 10px;
+    }
+
+    .faq-area .accordion li a.active {
+        font-size: 10px;
+    }
+
+    .faq-area .accordion p {
+        font-size: 10px;
+        line-height: 25px;
+    }
+
+    .call-do-action .sub-title p {
+        font-size: 11px;
+        line-height: 23px;
+        width: 100%;
+    }
+
+    .single-process::before {
+        width: 36%;
+    }
+
+    .managing-thumb {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .mission-area.style-two .mission-thumb {
+        left: 0;
+        bottom: 30px;
+    }
+
+    .mission-area {
+        padding: 0 0 90px;
+    }
+
+    .missions-content .mission-discription p {
+        font-size: 15px;
+    }
+
+    .company-logo img {
+        width: 40%;
+    }
+
+    .company-logo {
+        top: -25px;
+        left: -6px;
+    }
+
+    .managing-discription p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .blog-area.style-two .blog-title h2 a {
+        font-size: 25px;
+    }
+
+    .blog-area.style-two .blog-text p {
+        font-size: 15px;
+        line-height: 25px;
+    }
+
+    .blog-area.style-two .blogs-titles h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .blog-area.style-two .form-button button {
+        margin-bottom: 50px;
+    }
+
+    .resent-title a h3 {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .breadcumb-title h1 {
+        font-size: 45px;
+    }
+
+    .company-info-section .form-button button {
+        margin-bottom: 50px;
+    }
+
+    .company-icon-box {
+        padding: 57px 0px 30px 20px;
+    }
+
+    .company-icon-box .company-titles h3 {
+        font-size: 25px;
+    }
+
+    .company-icon-list ul li.follow-text {
+        font-size: 12px;
+        margin-right: 5px;
+    }
+
+    .company-icon-list ul li {
+        margin-right: 0;
+    }
+
+    .blog-area.style-two .form-button button {
+        margin-bottom: 50px;
+    }
+
+    .single_login {
+        margin-top: 30px;
+    }
+
+    .login-section .form-button button {
+        padding: 14px 60px;
+    }
+
+    .login-section .form_box p {
+        display: none;
+    }
+
+    .bottom-text {
+        text-align: center;
+    }
+
+    .login-section.upper .form-button button {
+        padding: 14px 60px;
+    }
+
+    .login-disaription p {
+        font-size: 14px;
+    }
+
+    .login-title h1 {
+        font-size: 30px;
+    }
+
+    .card-animation img {
+        width: 70%;
+    }
+
+    .cards-thumb img {
+        width: 100%;
+    }
+
+    .our-cards-section .single_cards .card-left-img {
+        bottom: 70px;
+        right: -76px;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        top: 44px;
+        left: 79px;
+    }
+
+    .our-cards-section .single_cards .card-left-img {
+        display: none;
+    }
+
+    .our-cards-section .single_cards .card-right-img {
+        display: none;
+    }
+
+    .our-cards-section .single_cards .cards-thumb {
+        left: 0;
+    }
+
+    .slider-area .hape-img {
+        bottom: -80%;
+    }
+
+    .single-counter-box {
+        margin-bottom: 30px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_tmb {
+        top: 25px;
+        left: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about-discription p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+    .our-cards-section .cards-discription p {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .sub-title p {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .location-thumb-1 {
+        right: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-location-area .location-thumb-2 {
+        left: 0;
+    }
+
+    .slider-area .hape-img-two {
+        display: none;
+    }
+
+    .slider-area .hape-img {
+        bottom: -95%;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_tmb {
+        top: -35px;
+        left: 0;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-about-section .about_thumb {
+        bottom: 70px;
+    }
+
+    .Dreamhub IT-solution HTML5 Template-brand-section .single-brand {
+        text-align: center;
+    }
+
+    .our-cards-section .card-button {
+        margin-bottom: 50px;
+    }
+
+    .single-transaction .transaction-tmb {
+        margin-left: 0;
+    }
+
+    .subscribe-area.upper .row.bg .form_box input {
+        width: 90%;
+        height: 65px;
+    }
+
+    .subscribe-area.upper .row.bg .form-button {
+        right: 11%;
+    }
+
+    .subscribe-area.upper .row.bg {
+        padding: 35px 0 35px;
+    }
+
+    .footer-area {
+        padding: 110px 0 0;
+    }
+
+    .subscribe-area.upper .row.bg .form-button button {
+        padding: 10px 5px;
+    }
+
+    .slider-area {
+        height: 550px;
+    }
+
+    .our-cards-section {
+        padding: 0px 0 100px;
+    }
+
+    .testimonial-thumb img {
+        width: 100%;
+    }
+
+    .slider-title h2 {
+        font-size: 40px;
+    }
+
+    .slider-title h2::before {
+        width: 35px;
+    }
+
+    .it-solution-brand-area .brand-title h3 {
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    .section-discription p {
+        font-size: 13px;
+    }
+
+    .it-solution-supports-section .supports-thumb img {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .it-solution-testimonial-area .testimonial-text h3 {
+        font-size: 15px;
+    }
+
+    .accordion a {
+        font-size: 14px;
+        padding: 8px 0 8px 0;
+        line-height: 25px;
+    }
+
+    .accordion p {
+        padding: 10px 5px 30px;
+        font-size: 14px;
+        line-height: 23px;
+    }
+
+
+}
+
+/* small mobile :320px. */
+@media only screen and (min-width: 320px) and (max-width: 991px) {
+    .header-top {
+        display: none;
+    }
+
+    .main-header {
+        display: none !important;
+    }
+
+    header.main-header {
+        display: none;
+    }
+
+    .top-header {
+        display: none;
+    }
+
+
+}
+

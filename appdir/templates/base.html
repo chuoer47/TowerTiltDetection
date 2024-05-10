@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container_test" style="width:100%;">
+    <div class="row clearfix">
+        <div class="col-md-12 column"
+             style="background:linear-gradient(to bottom, rgb(27, 101, 185), rgba(27, 101, 185, 1));position:fixed;z-index:1000;height:100px;width:101%">
+            <ul class="nav nav-tabs" style="height:100px;width:100%">
+                <li class="active" style="height:100px;width:100px;margin-left:20px;">
+                    <div class="centered-text"
+                         id="homeHover"
+                         style="background-color:rgb(96,166,232);border-radius:20px;height:80px;width:100px">
+                        <a class="navi-item" href="/index">首页</a>
+                    </div>
+                </li>
+                <li style="height:100px;width:150px;margin-left:20px;">
+                    <div class="centered-text" id="InfoHover" style="border-radius:20px;height:80px;width:150px;">
+                        <a class="navi-item" href="/info">项目信息</a>
+                    </div>
+                </li>
+                <li style="height:100px;width:100px;">
+                    <div class="centered-text" id="forumHover" style="border-radius:20px;height:80px;margin-left:20px">
+                        <a class="navi-item" href="/forum">论坛</a>
+                    </div>
+                </li>
+                <li style="height:100px;width:100px;margin-left:20px;">
+                    <div class="centered-text" id="consultHover"
+                         style="border-radius:20px;height:80px;width:100px;margin-left:20px">
+                        <a class="navi-item" href="/consult">咨询</a>
+                    </div>
+                </li>
+                <li style="height:100px;width:150px;margin-left:20px;">
+                    <div class="centered-text" id="TowerHover" style="border-radius:20px;height:80px;width:150px;">
+                        <a class="navi-item" href="/towerCenter">杆塔中心</a>
+                    </div>
+                </li>
+                <li class="dropdown pull-right" style="height:100px;width:150px;left:-50px">
+                    <div class="centered-text" id="accountHover" style="border-radius:20px;height:80px;width:120px">
+                        <a class="navi-item" data-toggle="dropdown"
+                           href="#" id="test">更多功能<strong class="caret"></strong></a>
+                        <ul class="dropdown-menu" style="border-radius:10px;">
+                            <li class="menu">
+                                <a class="menu-item" href="/login">登录</a>
+                            </li>
+                            <li class="menu">
+                                <a class="menu-item" href="/register">注册</a>
+                            </li>
+                            <li class="menu">
+                                <a class="menu-item" href="/aboutUs">关于我们</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+</div>
+
+
+<div class="text-center" style="margin-top: 200px">
+    <HR SIZE=3 color=#987cb9 style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="80%">
+    <label style="font-size: 12px;color: red">本网站仅供杆塔倾斜项目展示</label><br>
+    <label style="font-size: 12px;color: #8a8a8a">制作方: XJTUer</label>
+</div>
+</body>
+
+<style>
+    button:focus {
+        border: none;
+    }
+
+    .centered-text {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    a.navi-item {
+        font-size: 25px;
+        color: white;
+    }
+
+    a.navi-item:hover {
+        font-size: 30px;
+        color: white;
+    }
+
+    .open #test {
+        background-color: rgb(27, 101, 185);
+    }
+
+    li.menu {
+        height: 35px;
+    }
+
+    a.menu-item {
+        font-size: 20px;
+    }
+
+    a.menu-item:hover {
+        font-size: 22px;
+    }
+</style>
+</html>

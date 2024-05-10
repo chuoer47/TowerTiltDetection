@@ -1,0 +1,132 @@
+{% extends 'TowerTiltCenter/formBase.html' %}
+{% block form %}
+<script src="../static/script/towerCenter.js"></script>
+<div class="row align-items-center" style="display:flex;justify-content: center;align-items: center;">
+    <div class="col-lg-6" style="width:1000px">
+        <div class="single_login" style="background-color:white;margin-top:50px;">
+            <div class="login-title">
+                <h3>杆塔倾斜度测量填写表格</h3>
+            </div>
+            <div class="login-text">
+                <p>请填写杆塔倾斜记录</p>
+                {% for message in get_flashed_messages() %}
+                {% if message %}
+                <div style="color:red">{{ message }}</div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            <div class="row">
+                <form action="/towerTiltForm" id="questionForm" method="post" novalidate role="form">
+                    <!-- towerId -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerId">towerId</label>
+                            <input %} %} %}readonly{% %}value="{{ towerId }}"
+                                   endif endif id="towerUpperE" if if name="towerId" placeholder="Enter towerId value" towerId towerId type="text"
+                                   {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+                    <!-- towerUpperE -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerUpperE">towerUpperE</label>
+                            <input %} %} %}readonly{%
+                                   %}value="{{ towerUpperE }}"
+                                   endif endif id="towerUpperE" if if name="towerUpperE" placeholder="Enter towerUpperE value,eg:00,00,00" towerUpperE towerUpperE type="text"
+                                   {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerUpperS -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerUpperS">towerUpperS</label>
+                            <input %} %} %}readonly{% %}value="{{ towerUpperS }}"
+                                   endif endif id="towerUpperS" if if name="towerUpperS" placeholder="Enter towerUpperS value" towerUpperS towerUpperS type="text"
+                                   {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerUpperW -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerUpperW">towerUpperW</label>
+                            <input %} %} %}readonly{% %}value="{{ towerUpperW }}"
+                                   endif endif id="towerUpperW" if if name="towerUpperW" placeholder="Enter towerUpperW value" towerUpperW towerUpperW type="text"
+                                   {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerUpperN -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerUpperN">towerUpperN</label>
+                            <input %} %} %}readonly{% %}value="{{ towerUpperN }}"
+                                   endif endif id="towerUpperN" if if name="towerUpperN" placeholder="Enter towerUpperN value" towerUpperN towerUpperN type="text"
+                                   {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerBottomE -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerBottomE">towerBottomE</label>
+                            <input %} %} %}readonly{%
+                                   %}value="{{ towerBottomE }}" endif endif id="towerBottomE"
+                                   if if name="towerBottomE" placeholder="Enter towerBottomE value" towerBottomE towerBottomE type="text" {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerBottomS -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerBottomS">towerBottomS</label>
+                            <input %} %} %}readonly{%
+                                   %}value="{{ towerBottomS }}" endif endif id="towerBottomS"
+                                   if if name="towerBottomS" placeholder="Enter towerBottomS value" towerBottomS towerBottomS type="text" {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerBottomW -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerBottomW">towerBottomW</label>
+                            <input %} %} %}readonly{%
+                                   %}value="{{ towerBottomW }}" endif endif id="towerBottomW"
+                                   if if name="towerBottomW" placeholder="Enter towerBottomW value" towerBottomW towerBottomW type="text" {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- towerBottomN -->
+                    <div class="col-lg-12">
+                        <div class="form_box">
+                            <label for="towerBottomN">towerBottomN</label>
+                            <input %} %} %}readonly{%
+                                   %}value="{{ towerBottomN }}" endif endif id="towerBottomN"
+                                   if if name="towerBottomN" placeholder="Enter towerBottomN value" towerBottomN towerBottomN type="text" {% {% {%>
+                            <span><i class="bi bi-envelope"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12">
+                        <div class="form-submit"
+                             style="display:flex;justify-content: center;align-items: center;">
+                            <button class="submitBTN" type="submit">提交</button>
+                            <button class="clearBTN" onclick="clearForm()" type="button">清空</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

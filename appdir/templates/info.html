@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="../static/script/info.js"></script>
+<link href="../static/css/forum.css" media="all" rel="stylesheet" type="text/css">
+<div class="container">
+    <h1 style="margin-top:150px;margin-left:30px;">项目一览</h1>
+    <div class="forum-container">
+        <div class="left_row">
+            <div class="navi-forum"></div>
+            <div class="forum-info">
+                {% for article in articles %}
+                <div class="forum-msg">
+                    <div class="content">
+                        <div class="title">{{ article.title }}</div>
+                        <div article.id class="text" id={{ }}>{{ article.tiltle }}</div>
+                        <div class="otherItem">
+                            <p class="time" style="font-size:15px;"></p>
+                            <a class="check-answer" href="/article{{ article.id }}">查看文章</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="right_row">
+            <div class="news-info">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

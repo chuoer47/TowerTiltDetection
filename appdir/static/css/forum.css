@@ -1,0 +1,106 @@
+.container {
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(27, 101, 185, 0.3), rgba(27, 101, 185, 0));
+}
+
+.forum-container {
+    width：100
+
+%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left_row {
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.forum-info {
+    height: 700px;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.forum-msg {
+    background-color: white;
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    box-shadow: 10px 10px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.photo-and-name {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    border-bottom: 1px solid gray; /* 设置下边框的粗细和颜色 */
+    padding-bottom: 5px; /* 如果需要，可以添加一些内边距 */
+}
+
+.photo {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.name {
+    margin-left: 20px;
+    font-size: 20px;
+    color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.text {
+    overflow: hidden; /* 隐藏溢出的内容 */
+    position: relative; /* 用于定位按钮 */
+    height: 20px; /* 初始高度 */
+    transition: height 0.5s ease; /* 高度变化动画 */
+}
+
+.text.expanded {
+    height: auto; /* 自动调整高度以适应全部内容 */
+}
+
+.tip {
+    display: flex;
+    justify-content: center;
+}
+
+a.showMore {
+    font-size: 15px;
+}
+
+a.showMore:hover {
+    font-size: 17px;
+}
+
+.otherItem {
+    margin-bottom: 10px;
+}
+
+a.check-answer {
+    font-size: 15px;
+    margin: 15px;
+    border: 1px solid rgb(27, 101, 185);
+    padding: 5px;
+}
+
+a.check-answer:hover {
+    font-size: 17px;
+    background-color: rgba(27, 101, 185, 0.2);
+}

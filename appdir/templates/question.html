@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+<link href="../static/css/question.css" media="all" rel="stylesheet" type="text/css">
+<script src="../static/script/forum.js"></script>
+
+<div class="container">
+    <div class="question-container">
+        <div class="question-title">{{ question.title }}</div>
+        <div id={{ question.id }}>{{ question.question }}</div>
+
+        <div class="answer">
+            {% if answers | length == 0 %}
+            <p class="card-text" style="margin-top: 20px;">This question has not been answered so far.</p>
+            {% endif %}
+            {% for answer in answers %}
+            <div class="answer-content">
+                <div class="photo-and-name">
+                    <div class="photo">
+                        <img alt=""
+                             loading="lazy" src="../static/image/bootstrap-icon/person-fill.svg" style="width:50px;height:50px;">
+                    </div>
+                    <div class="name">{{ answer.username }}</div>
+                </div>
+                <div class="answer-boby">
+                    <div answer.id class="answer-text" id={{ }}>{{ answer.content }}</div>
+                    <div class="tip">
+                        <a class="showMore" id="tips" onclick="expand(this,{{ question.id }})">展开</a>
+                    </div>
+                    <div class="collapse multi-collapse" id="multiCollapse{{ loop.index }}">
+                        <div class="card">
+                            <h5 class="card-header">
+                                <span class="align-middle">{{ answer.comments | length }} comment</span>
+                            </h5>
+                            <div class="card-body">
+                                {% for comment in answer.comments %}
+                                <div>
+                                    <img alt="" class="d-inline-block align-middle"
+                                         height="20"
+                                         loading="lazy"
+                                         src="../static/image/bootstrap-icon/person-fill.svg" style="margin-left: 0px" width="20">
+                                    <span class="align-middle"
+                                          style="font-weight: bold">{{ comment.username }}</span>
+                                </div>
+
+                                <p class="card-text" style="margin-top: 20px">{{ comment.content }}</p>
+                                <hr>
+                                {% endfor %}
+                            </div>
+                            <div class="card-footer">
+                                <div class="container">
+                                    <div class="row">
+                                        <span style="display: none">{{ answer.id }}</span>
+                                        <input class="form-control col-10 comment-text" placeholder="Write your comment..."
+                                               type="text">
+                                        <span class="col-1"> </span>
+                                        <button class="btn form-control col-1 btn-outline-primary submit-comment">
+                                            Post
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
