@@ -21,9 +21,7 @@
                     <div class="col-lg-12">
                         <div class="form_box">
                             <label for="name">名字</label>
-                            <input %} %} %}readonly{% %}value="{{ name }}"
-                                   endif endif id="name" if if name="name" name name placeholder="输入杆塔名字" type="text"
-                                   {% {% {%>
+                            <input  {% if name %}value="{{ name }}"{% endif %} id="name" name="name" placeholder="输入杆塔名字" type="text" {% if name %}readonly{% endif %}>
                             <span><i class="bi bi-person"></i></span>
                         </div>
                     </div>
@@ -31,8 +29,7 @@
                     <div class="col-lg-12">
                         <div class="form_box">
                             <label for="description">描述</label>
-                            <textarea %} %}readonly{% description endif id="description" if
-                                      name="description" placeholder="输入杆塔描述" {%>{{ description }}</textarea>
+                            <textarea id="description" name="description" placeholder="输入杆塔描述" {% if description %}readonly{% endif %}>{{ description }}</textarea>
                         </div>
                     </div>
                     <!--两个按钮-->

@@ -10,7 +10,7 @@
 
         <div class="answer">
             {% if answers | length == 0 %}
-            <p class="card-text" style="margin-top: 20px;">This question has not been answered so far.</p>
+            <p class="card-text" style="margin-top: 20px;">该问题还没得到解答</p>
             {% endif %}
             {% for answer in answers %}
             <div class="answer-content">
@@ -22,7 +22,7 @@
                     <div class="name">{{ answer.username }}</div>
                 </div>
                 <div class="answer-boby">
-                    <div answer.id class="answer-text" id={{ }}>{{ answer.content }}</div>
+                    <div  class="answer-text" id= {{ answer.id }}>{{ answer.content }}</div>
                     <div class="tip">
                         <a class="showMore" id="tips" onclick="expand(this,{{ question.id }})">展开</a>
                     </div>

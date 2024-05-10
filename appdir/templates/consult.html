@@ -49,24 +49,24 @@
                     <div class="row">
                         <form action="/consult" id="questionForm" method="post" novalidate role="form">
                             <div class="col-lg-12">
-                                <div class="form_box"><label for="title">标题</label> <input %} %}
-                                                                                             %}readonly{%
-                                                                                             %}value="{{ title }}"
-                                                                                             endif endif id="title"
-                                                                                             if if
-                                                                                             name="title" placeholder="例如：杆塔倾斜危害" title title type="text"
-                                                                                             {% {% {%>
-                                    <span><i class="bi bi-envelope"></i></span></div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form_box"><label for="question">问题</label> <textarea %}
-                                                                                                   %}readonly{%
-                                                                                                   endif id="question" if
-                                                                                                   name="question" placeholder="请输入您的问题"
-                                                                                                   question rows="7"
-                                                                                                   {%>{{ question }}</textarea>
+                                    <div class="form_box">
+                                        <label for="title">标题</label>
+                                        <input type="text" id="title" name="title"
+                                               placeholder="example:杆塔为什么会倾斜"
+                                               {% if title %}value="{{ title }}"{% endif %}
+                                               {% if title %}readonly{% endif %}>
+                                        <span><i class="bi bi-envelope"></i></span>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="col-lg-12">
+                                    <div class="form_box">
+                                        <label for="question">疑问</label>
+                                        <textarea id="question"
+                                                  name="question" rows="7"
+                                                  {% if question %}readonly{% endif %}
+                                                  placeholder="在此输入你的问题">{{ question }}</textarea>
+                                    </div>
+                                </div>
                             <div class="col-lg-12 col-md-12">
                                 <div class="form-submit"
                                      style="display:flex;justify-content: center;align-items: center;">

@@ -53,8 +53,7 @@ def register():
 # 文章信息
 @app.route('/info', methods=['GET', 'POST'])
 def info():  # put application's code here
-    return render_template('info.html',
-                           articles=get_all_articles())
+    return render_template('info.html', articles=get_all_articles())
 
 
 # ——————————————————————————————————————————————————
