@@ -18,6 +18,24 @@ flask initdb --drop
 flask addArticle
 ```
 
+- 初始化论坛
+
+```shell
+flask initForum
+```
+
+- 初始化杆塔
+
+```shell
+flask initTower
+```
+
+- 初始化杆塔数据
+
+```shell
+flask initTiltData
+```
+
 3. 启动项目`app.py`即可
 
 ```shell
@@ -60,5 +78,5 @@ pyinstaller myapp.spec
 
 - [ ] 主页信息展示完善
 - [ ] 论坛暂无网页回答
-- [ ] 杆塔倾斜度计算
-- [ ] 可视化展示杆塔倾斜 & 历史记录
+- [X] 杆塔倾斜度计算
+- [X] 可视化展示杆塔倾斜 & 历史记录

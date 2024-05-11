@@ -101,19 +101,6 @@ def getAnswerById(questionId):
 # ——————————————————————————————————
 # 下面是杆塔中心表单的处理函数:
 
-# dailyReminder表单处理
-def solveDailyReminder(dailyReminder):
-    if not dailyReminder:
-        flash("Please fill in all the required fields", 'error')
-        return redirect(url_for('dailyReminderForm'))
-    now_time = datetime.now()
-    dailyReminder = DailyReminder(datetime=now_time, reminder=dailyReminder)
-    db.session.add(dailyReminder)
-    db.session.commit()
-    flash("success reminder", 'success')
-    return
-
-
 def solveTowerTiltRecord(request):
     towerId = request.form.get('towerId')
     towerUpperE = request.form.get('towerUpperE')
@@ -125,7 +112,7 @@ def solveTowerTiltRecord(request):
     towerBottomW = request.form.get('towerBottomW')
     towerBottomN = request.form.get('towerBottomN')
     if not towerId and not towerUpperE and not towerUpperS and not towerUpperW and not towerUpperN and not towerBottomE and not towerBottomS and not towerBottomW and not towerBottomN:
-        flash("请填写完整", 'error')
+        flash("请填写完整,注意数据要1个空格隔开", 'error')
         return redirect(url_for('towerTiltForm'))
     now_time = datetime.now()
     towerTilt = cal(towerUpperE=towerUpperE,
@@ -136,6 +123,9 @@ def solveTowerTiltRecord(request):
                     towerBottomS=towerBottomS,
                     towerBottomW=towerBottomW,
                     towerBottomN=towerBottomN)
+    if None:
+        flash("请填写正确的格式", 'error')
+        return redirect(url_for('towerTiltForm'))
     tiltRecord = TiltRecord(datetime=now_time,
                             towerId=towerId,
                             towerUpperE=towerUpperE,
@@ -182,7 +172,7 @@ def solveAddTower(name, description):
 
 
 def getTowerInfoById(towerId):
-    towers = TiltRecord.query.filter(TiltRecord.id == towerId)
+    towers = TiltRecord.query.filter(TiltRecord.towerId == int(towerId))
     data = []
     for t in towers:
         data.append({
@@ -199,7 +189,7 @@ def getTowerInfoById(towerId):
             'towerBottomN': t.towerBottomN,
             'towerTilt': t.towerTilt
         })
-        return data
+    return data
 
 
 # ——————————————————————————————————

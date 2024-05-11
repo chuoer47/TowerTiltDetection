@@ -1,7 +1,7 @@
 """
 该类配置项目
 """
-
+import inspect
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))

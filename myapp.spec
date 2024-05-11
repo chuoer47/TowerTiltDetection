@@ -1,15 +1,14 @@
-# -*- mode: python ; coding: utf-8 -*-
-
 
 a = Analysis(
     ['app.py'],
-    pathex=['E:\\xjtu-Project\\TowerTiltDetection\\exe'],
+    pathex=['E:\\xjtu-Project\\TowerTiltDetection'],
     binaries=[],
-    datas=[('appdir\\static','appdir\\static'),
-    ('appdir\\templates','appdir\\templates'),
-    ('appdir\\app.db','appdir\\app.db')
+    datas=[
+        ('appdir\\static', 'appdir\\static'),
+        ('appdir\\templates', 'appdir\\templates'),
+        ('appdir\\app.db', 'appdir')
     ],
-    hiddenimports=[],
+    hiddenimports=['pysqlite2', 'MySQLdb', 'psycopg2'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
