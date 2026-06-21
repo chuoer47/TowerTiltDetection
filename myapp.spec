@@ -1,14 +1,14 @@
 
 a = Analysis(
     ['app.py'],
-    pathex=['E:\\xjtu-Project\\TowerTiltDetection'],
+    pathex=['.'],
     binaries=[],
     datas=[
         ('appdir\\static', 'appdir\\static'),
         ('appdir\\templates', 'appdir\\templates'),
         ('appdir\\app.db', 'appdir')
     ],
-    hiddenimports=['pysqlite2', 'MySQLdb', 'psycopg2'],
+    hiddenimports=['pysqlite2'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

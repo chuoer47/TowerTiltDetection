@@ -1,25 +1,25 @@
-from math import *
+"""杆塔倾斜度计算算法"""
+
+import logging
+from math import inf
 
 import numpy as np
+
+logger = logging.getLogger(__name__)
 
 
 def find_line_z_intersection(point1, point2, z0):
     """求解两个点构成的直线与z0平面的交点"""
-    # 将坐标点转换为NumPy数组
     point1 = np.array(point1)
     point2 = np.array(point2)
-
-    # 计算直线的方向向量
     direction_vector = point2 - point1
-
-    # 计算直线与z平面的交点
     t = (z0 - point1[2]) / direction_vector[2]
     intersection_point = point1 + t * direction_vector
     return intersection_point.tolist()
 
 
 def calculate_angle_between_lines(v1, v2):
-    """求解角度"""
+    """求解两个向量之间的角度"""
     v1 = np.array(v1)
     v2 = np.array(v2)
     dot_product = np.dot(v1, v2)
@@ -46,7 +46,6 @@ def calculate_line_intersection(args):
     return intersection.tolist()[::-1] + [a[2]]
 
 
-# 计算杆塔倾斜度的算法
 def cal(towerUpperE: str,
         towerUpperS: str,
         towerUpperW: str,
@@ -55,6 +54,7 @@ def cal(towerUpperE: str,
         towerBottomS: str,
         towerBottomW: str,
         towerBottomN: str):
+    """计算杆塔倾斜度，返回倾斜角的度数字符串，失败返回 None"""
     try:
         # 数据预处理
         eb = list(map(float, towerBottomE.strip().split(" ")))
@@ -65,6 +65,16 @@ def cal(towerUpperE: str,
         nu = list(map(float, towerUpperN.strip().split(" ")))
         wu = list(map(float, towerUpperW.strip().split(" ")))
         su = list(map(float, towerUpperS.strip().split(" ")))
+
+        # 校验每个坐标必须是3个数值 (经度 纬度 高度)
+        for name, coords in [("towerBottomE", eb), ("towerBottomN", nb),
+                              ("towerBottomW", wb), ("towerBottomS", sb),
+                              ("towerUpperE", eu), ("towerUpperN", nu),
+                              ("towerUpperW", wu), ("towerUpperS", su)]:
+            if len(coords) != 3:
+                logger.error(f"坐标 {name} 应包含3个数值，实际为 {len(coords)} 个")
+                return None
+
         # 封装数据
         points = [[eb, nb, wb, sb], [eu, nu, wu, su]]
         # 找到最低zl和最高的zh
@@ -74,14 +84,17 @@ def cal(towerUpperE: str,
         for i in points[1]:
             zh = max(zh, i[2])
         # 获取四个棱与zl和zh平面的交点
-        new_points = [[find_line_z_intersection(points[0][i], points[1][i], zl) for i in range(4)],
-                      [find_line_z_intersection(points[0][i], points[1][i], zh) for i in range(4)]]  # 存放新的交点数组
+        new_points = [
+            [find_line_z_intersection(points[0][i], points[1][i], zl) for i in range(4)],
+            [find_line_z_intersection(points[0][i], points[1][i], zh) for i in range(4)]
+        ]
         P = calculate_line_intersection(new_points[0])
         p = calculate_line_intersection(new_points[1])
         angle = calculate_angle_between_lines(v1=[0, 0, 1],
                                               v2=[P[0] - p[0], P[1] - p[1], P[2] - p[2]])
         return str(abs(np.degrees(angle)))
-    except:
+    except Exception as e:
+        logger.error(f"计算倾斜度失败: {e}")
         return None
 
 

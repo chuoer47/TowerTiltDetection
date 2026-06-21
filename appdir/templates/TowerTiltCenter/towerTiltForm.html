@@ -1,134 +1,89 @@
 {% extends 'TowerTiltCenter/formBase.html' %}
+{% block title %}杆塔倾斜测量 - 杆塔倾斜检测{% endblock %}
+{% block form_title %}倾斜度测量{% endblock %}
 {% block form %}
-<script src="../static/script/towerCenter.js"></script>
-<div class="row align-items-center" style="display:flex;justify-content: center;align-items: center;">
-    <div class="col-lg-6" style="width:1000px">
-        <div class="single_login" style="background-color:white;margin-top:50px;">
-            <div class="login-title">
-                <h3>杆塔倾斜度测量填写表格</h3>
-            </div>
-            <div class="login-text">
-                <p>请填写杆塔倾斜记录</p>
-                {% for message in get_flashed_messages() %}
-                {% if message %}
-                <div style="color:red">{{ message }}</div>
-                {% endif %}
-                {% endfor %}
-            </div>
-            <div class="row">
-                <form action="/towerTiltForm0" id="questionForm" method="post" novalidate role="form">
-                    <!-- towerId -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerId">towerId</label>
-                            <input type="text" id="towerId" name="towerId"
-                                   placeholder="Enter towerId value"
-                                   {% if towerId %}value="{{ towerId }}" {% endif %}
-                                   {% if towerId %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
 
-                    <!-- towerUpperE -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerUpperE">towerUpperE</label>
-                            <input type="text" id="towerUpperE" name="towerUpperE" placeholder="Enter towerUpperE value,eg:00 00 00"
-                                   {% if towerUpperE %}value="{{ towerUpperE }}" {% endif %} {% if towerUpperE
-                                   %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
+<h3 style="margin-bottom:var(--space-sm);">杆塔倾斜度测量</h3>
+<p class="text-sm" style="margin-bottom:var(--space-xl);">请填写杆塔上下各 4 个方向的三维坐标（经度 纬度 高度，空格分隔）</p>
 
-                    <!-- towerUpperS -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerUpperS">towerUpperS</label>
-                            <input type="text" id="towerUpperS" name="towerUpperS" placeholder="Enter towerUpperS value"
-                                   {% if towerUpperS %}value="{{ towerUpperS }}" {% endif %} {% if towerUpperS
-                                   %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
+<form action="/towerTiltForm/{{ towerId }}" method="post" novalidate>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
 
-                    <!-- towerUpperW -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerUpperW">towerUpperW</label>
-                            <input type="text" id="towerUpperW" name="towerUpperW" placeholder="Enter towerUpperW value"
-                                   {% if towerUpperW %}value="{{ towerUpperW }}" {% endif %} {% if towerUpperW
-                                   %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
+    <div class="form-group">
+        <label class="form-label" for="towerId">杆塔 ID</label>
+        <input class="form-input" type="text" id="towerId" name="towerId"
+               placeholder="输入杆塔 ID"
+               {% if towerId %}value="{{ towerId }}" readonly{% endif %}>
+    </div>
 
-                    <!-- towerUpperN -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerUpperN">towerUpperN</label>
-                            <input type="text" id="towerUpperN" name="towerUpperN" placeholder="Enter towerUpperN value"
-                                   {% if towerUpperN %}value="{{ towerUpperN }}" {% endif %} {% if towerUpperN
-                                   %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
+    <h4 style="margin-top:var(--space-xl);margin-bottom:var(--space-md);color:var(--color-primary);">
+        <i class="bi bi-arrow-up-circle"></i> 上部测量点
+    </h4>
 
-                    <!-- towerBottomE -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerBottomE">towerBottomE</label>
-                            <input type="text" id="towerBottomE" name="towerBottomE"
-                                   placeholder="Enter towerBottomE value" {% if towerBottomE
-                                   %}value="{{ towerBottomE }}" {% endif %} {% if towerBottomE %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
-
-                    <!-- towerBottomS -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerBottomS">towerBottomS</label>
-                            <input type="text" id="towerBottomS" name="towerBottomS"
-                                   placeholder="Enter towerBottomS value" {% if towerBottomS
-                                   %}value="{{ towerBottomS }}" {% endif %} {% if towerBottomS %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
-
-                    <!-- towerBottomW -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerBottomW">towerBottomW</label>
-                            <input type="text" id="towerBottomW" name="towerBottomW"
-                                   placeholder="Enter towerBottomW value" {% if towerBottomW
-                                   %}value="{{ towerBottomW }}" {% endif %} {% if towerBottomW %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
-
-                    <!-- towerBottomN -->
-                    <div class="col-lg-12">
-                        <div class="form_box">
-                            <label for="towerBottomN">towerBottomN</label>
-                            <input type="text" id="towerBottomN" name="towerBottomN"
-                                   placeholder="Enter towerBottomN value" {% if towerBottomN
-                                   %}value="{{ towerBottomN }}" {% endif %} {% if towerBottomN %}readonly{% endif %}>
-                            <span><i class="bi bi-envelope"></i></span>
-                        </div>
-                    </div>
-
-
-                    <div class="col-lg-12 col-md-12">
-                        <div class="form-submit"
-                             style="display:flex;justify-content: center;align-items: center;">
-                            <button class="submitBTN" type="submit">提交</button>
-                            <button class="clearBTN" onclick="clearForm()" type="button">清空</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
+        <div class="form-group">
+            <label class="form-label" for="towerUpperE">东 (E)</label>
+            <input class="form-input" type="text" id="towerUpperE" name="towerUpperE"
+                   placeholder="经度 纬度 高度"
+                   {% if towerUpperE %}value="{{ towerUpperE }}" readonly{% endif %}>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="towerUpperS">南 (S)</label>
+            <input class="form-input" type="text" id="towerUpperS" name="towerUpperS"
+                   placeholder="经度 纬度 高度"
+                   {% if towerUpperS %}value="{{ towerUpperS }}" readonly{% endif %}>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="towerUpperW">西 (W)</label>
+            <input class="form-input" type="text" id="towerUpperW" name="towerUpperW"
+                   placeholder="经度 纬度 高度"
+                   {% if towerUpperW %}value="{{ towerUpperW }}" readonly{% endif %}>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="towerUpperN">北 (N)</label>
+            <input class="form-input" type="text" id="towerUpperN" name="towerUpperN"
+                   placeholder="经度 纬度 高度"
+                   {% if towerUpperN %}value="{{ towerUpperN }}" readonly{% endif %}>
         </div>
     </div>
-</div>
+
+    <h4 style="margin-top:var(--space-xl);margin-bottom:var(--space-md);color:var(--color-primary);">
+        <i class="bi bi-arrow-down-circle"></i> 下部测量点
+    </h4>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);">
+        <div class="form-group">
+            <label class="form-label" for="towerBottomE">东 (E)</label>
+            <input class="form-input" type="text" id="towerBottomE" name="towerBottomE"
+                   placeholder="经度 纬度 高度"
+                   {% if towerBottomE %}value="{{ towerBottomE }}" readonly{% endif %}>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="towerBottomS">南 (S)</label>
+            <input class="form-input" type="text" id="towerBottomS" name="towerBottomS"
+                   placeholder="经度 纬度 高度"
+                   {% if towerBottomS %}value="{{ towerBottomS }}" readonly{% endif %}>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="towerBottomW">西 (W)</label>
+            <input class="form-input" type="text" id="towerBottomW" name="towerBottomW"
+                   placeholder="经度 纬度 高度"
+                   {% if towerBottomW %}value="{{ towerBottomW }}" readonly{% endif %}>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="towerBottomN">北 (N)</label>
+            <input class="form-input" type="text" id="towerBottomN" name="towerBottomN"
+                   placeholder="经度 纬度 高度"
+                   {% if towerBottomN %}value="{{ towerBottomN }}" readonly{% endif %}>
+        </div>
+    </div>
+
+    <div style="display:flex;gap:var(--space-md);justify-content:flex-end;margin-top:var(--space-xl);">
+        <button class="btn btn-outline" type="button" onclick="this.closest('form').reset();">清空</button>
+        <button class="btn btn-primary" type="submit">
+            <i class="bi bi-calculator"></i> 提交计算
+        </button>
+    </div>
+</form>
 
 {% endblock %}

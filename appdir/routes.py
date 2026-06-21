@@ -1,15 +1,16 @@
-"""
-该类设置路由
-"""
+"""路由定义"""
 
-from flask import render_template, request
+from flask import render_template, request, session, redirect, url_for
 
 from appdir import app
 from appdir.forms import AnswerForm
-from appdir.models import *
+from appdir.models import Question, Tower
 from appdir.utils.dataset import dic_article
-from appdir.utils.util import validate_register, validate_login, addQuestion, get_all_questions, getAnswerById, \
-    solveTowerTiltRecord, solveAddTower, get_all_tower, getTowerInfoById, get_all_articles
+from appdir.utils.util import (
+    validate_register, validate_login, add_question, get_all_questions,
+    get_answer_by_id, solve_tower_tilt_record, solve_add_tower,
+    get_all_tower, get_tower_info_by_id, get_all_articles
+)
 
 
 # 根路由
@@ -20,7 +21,7 @@ def root():
 
 # 首页
 @app.route('/index', methods=['GET', 'POST'])
-def index():  # put application's code here
+def index():
     return render_template('index.html')
 
 
@@ -30,11 +31,8 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
-        print(username, password)
-        validate_login(username, password)
-        return render_template('other/login.html')
-    else:
-        return render_template('other/login.html')
+        return validate_login(username, password)
+    return render_template('other/login.html')
 
 
 # 注册
@@ -44,101 +42,96 @@ def register():
         username = request.form.get('username')
         password = request.form.get('password')
         repassword = request.form.get('repassword')
-        validate_register(username, password, repassword)
-        return render_template('other/register.html')
-    else:
-        return render_template('other/register.html')
+        return validate_register(username, password, repassword)
+    return render_template('other/register.html')
+
+
+# 退出登录
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
 
 
 # 文章信息
 @app.route('/info', methods=['GET', 'POST'])
-def info():  # put application's code here
+def info():
     return render_template('info.html', articles=get_all_articles())
 
 
 # ——————————————————————————————————————————————————
-# 下面为杆塔中心 & 杆塔倾斜表格
 # 杆塔中心
 @app.route('/towerCenter', methods=['GET', 'POST'])
-def towerCenter():  # put application's code here
+def tower_center():
     return render_template('TowerTiltCenter/towerCenter.html', towers=get_all_tower())
 
 
 # 杆塔倾斜表格
-@app.route('/towerTiltForm<towerId>', methods=['GET', 'POST'])
-def towerTiltForm(towerId):  # put application's code here
+@app.route('/towerTiltForm/<int:tower_id>', methods=['GET', 'POST'])
+def tower_tilt_form(tower_id):
     if request.method == 'POST':
-        towerId = request.form.get('towerId')
-        towerUpperE = request.form.get('towerUpperE')
-        towerUpperS = request.form.get('towerUpperS')
-        towerUpperW = request.form.get('towerUpperW')
-        towerUpperN = request.form.get('towerUpperN')
-        towerBottomE = request.form.get('towerBottomE')
-        towerBottomS = request.form.get('towerBottomS')
-        towerBottomW = request.form.get('towerBottomW')
-        towerBottomN = request.form.get('towerBottomN')
-        solveTowerTiltRecord(request)
+        solve_tower_tilt_record(request)
+        # 用提交的数据重新渲染页面
         return render_template('TowerTiltCenter/towerTiltForm.html',
-                               towerId=towerId,
-                               towerUpperE=towerUpperE,
-                               towerUpperS=towerUpperS,
-                               towerUpperW=towerUpperW,
-                               towerUpperN=towerUpperN,
-                               towerBottomE=towerBottomE,
-                               towerBottomS=towerBottomS,
-                               towerBottomW=towerBottomW,
-                               towerBottomN=towerBottomN)
+                               towerId=request.form.get('towerId'),
+                               towerUpperE=request.form.get('towerUpperE'),
+                               towerUpperS=request.form.get('towerUpperS'),
+                               towerUpperW=request.form.get('towerUpperW'),
+                               towerUpperN=request.form.get('towerUpperN'),
+                               towerBottomE=request.form.get('towerBottomE'),
+                               towerBottomS=request.form.get('towerBottomS'),
+                               towerBottomW=request.form.get('towerBottomW'),
+                               towerBottomN=request.form.get('towerBottomN'))
     return render_template('TowerTiltCenter/towerTiltForm.html',
-                           towerId=towerId)
+                           towerId=tower_id)
 
 
 # 添加杆塔
 @app.route('/addTower', methods=['GET', 'POST'])
-def addTower():
+def add_tower():
     if request.method == 'POST':
         name = request.form.get('name')
         description = request.form.get('description')
-        solveAddTower(name, description)
+        solve_add_tower(name, description)
         return render_template('TowerTiltCenter/addTower.html',
                                name=name,
                                description=description)
     return render_template('TowerTiltCenter/addTower.html')
 
 
-@app.route('/towerDetail<towerId>', methods=['GET', 'POST'])
-def towerDetail(towerId):
-    tower = Tower.query.filter(Tower.id == towerId).first()
+@app.route('/towerDetail/<int:tower_id>', methods=['GET', 'POST'])
+def tower_detail(tower_id):
+    tower = Tower.query.filter(Tower.id == tower_id).first()
     if not tower:
         tower = []
-    towerTilt = getTowerInfoById(towerId)
-    if not towerTilt:
-        towerTilt = []
+    tower_tilt = get_tower_info_by_id(tower_id)
+    if not tower_tilt:
+        tower_tilt = []
     return render_template('TowerTiltCenter/towerDetail.html',
                            tower=tower,
-                           towerTilt=towerTilt)
+                           towerTilt=tower_tilt)
 
 
 # ——————————————————————————————————————————————————————————————————————
 
 # 关于我们
 @app.route('/aboutUs', methods=['GET', 'POST'])
-def aboutUs():  # put application's code here
+def about_us():
     return render_template('other/aboutUs.html')
 
 
 # ————————————————————————————————————————————————————
-# 下面为论坛部分
+# 论坛部分
 
 # 添加论坛问题
 @app.route('/consult', methods=['GET', 'POST'])
-def consult():  # put application's code here
+def consult():
     if request.method == 'POST':
         title = request.form.get('title')
         question = request.form.get('question')
-        addQuestion(title, question)  # 数据库添加论坛问题
+        add_question(title, question)
         return render_template('consult.html', title=title, question=question, message="success")
-    else:
-        return render_template('consult.html')
+    return render_template('consult.html')
 
 
 # 访问论坛
@@ -148,10 +141,10 @@ def forum():
 
 
 # 问题详情页
-@app.route('/question<question_id>', methods=['GET', 'POST'])
-def question(question_id):
+@app.route('/question/<int:question_id>', methods=['GET', 'POST'])
+def question_detail(question_id):
     current_question = Question.query.filter(Question.id == question_id).first()
-    answers = getAnswerById(question_id)
+    answers = get_answer_by_id(question_id)
     answer_form = AnswerForm()
     return render_template('question.html',
                            question=current_question, answers=answers,
@@ -160,12 +153,8 @@ def question(question_id):
 
 # —————————————————————————————————————————————————————————————
 
-# ————————————————————————————————————————————————————————————
-# 以下为文章的路由地址
-
-@app.route('/article<id>', methods=['GET', 'POST'])
-def article(id):
-    link = dic_article[int(id)]
+# 文章路由
+@app.route('/article/<int:article_id>', methods=['GET', 'POST'])
+def article(article_id):
+    link = dic_article[int(article_id)]
     return render_template(link)
-
-# ——————————————————————————————————————————————————————————

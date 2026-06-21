@@ -1,35 +1,60 @@
 {% extends 'base.html' %}
+{% block title %}杆塔详情 - 杆塔倾斜检测{% endblock %}
+{% block nav_active %}nav-tower{% endblock %}
 {% block content %}
-<script src="../static/script/towerCenter.js"></script>
-<div class="container" style="margin-top:150px">
-    <div class="row clearfix">
-        <div class="col-md-12 column">
-            <div class="container">
-                <h1>杆塔过往倾斜数据 </h1>
 
-                <h2>{% if not towerTilt%}暂无数据——{% endif %}
-                    <a href="/towerTiltForm{{tower.id}}">添加杆塔数据</a></h2>
-
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th>测量时间</th>
-                        <th>倾斜度</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {% for item in towerTilt %}
-                    <tr>
-                        <td>{{ item.datetime }}</td>
-                        <td>{{ item.towerTilt }}</td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+<div class="page-header">
+    <div class="page-container">
+        <ul class="breadcrumb">
+            <li><a href="/towerCenter">杆塔中心</a></li>
+            <li class="breadcrumb-sep">/</li>
+            <li>杆塔详情</li>
+        </ul>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div>
+                <h1><i class="bi bi-broadcast-pin"></i> 杆塔历史数据</h1>
+                <p class="subtitle">查看该杆塔的倾斜测量记录</p>
             </div>
+            <a class="btn btn-primary" href="/towerTiltForm/{{ tower.id }}">
+                <i class="bi bi-plus-lg"></i> 添加测量数据
+            </a>
         </div>
     </div>
 </div>
 
+<div class="page-container">
+    {% if towerTilt %}
+    <div class="card card-elevated">
+        <div class="card-body" style="padding:0;overflow:hidden;">
+            <table class="data-table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>测量时间</th>
+                    <th>倾斜度</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in towerTilt %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.datetime }}</td>
+                    <td><strong>{{ item.towerTilt }}</strong></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon"><i class="bi bi-bar-chart"></i></div>
+        <p>暂无测量数据</p>
+        <a class="btn btn-primary" href="/towerTiltForm/{{ tower.id }}">
+            <i class="bi bi-plus"></i> 添加第一条数据
+        </a>
+    </div>
+    {% endif %}
+</div>
 
 {% endblock %}

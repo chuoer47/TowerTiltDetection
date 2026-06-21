@@ -1,72 +1,47 @@
 {% extends 'base.html' %}
+{% block title %}问题详情 - 杆塔倾斜检测{% endblock %}
+{% block nav_active %}nav-forum{% endblock %}
 {% block content %}
-<link href="../static/css/question.css" media="all" rel="stylesheet" type="text/css">
-<script src="../static/script/forum.js"></script>
 
-<div class="container">
-    <div class="question-container">
-        <div class="question-title">{{ question.title }}</div>
-        <div id={{ question.id }}>{{ question.question }}</div>
-
-        <div class="answer">
-            {% if answers | length == 0 %}
-            <p class="card-text" style="margin-top: 20px;">该问题还没得到解答</p>
-            {% endif %}
-            {% for answer in answers %}
-            <div class="answer-content">
-                <div class="photo-and-name">
-                    <div class="photo">
-                        <img alt=""
-                             loading="lazy" src="../static/image/bootstrap-icon/person-fill.svg" style="width:50px;height:50px;">
-                    </div>
-                    <div class="name">{{ answer.username }}</div>
-                </div>
-                <div class="answer-boby">
-                    <div  class="answer-text" id= {{ answer.id }}>{{ answer.content }}</div>
-                    <div class="tip">
-                        <a class="showMore" id="tips" onclick="expand(this,{{ question.id }})">展开</a>
-                    </div>
-                    <div class="collapse multi-collapse" id="multiCollapse{{ loop.index }}">
-                        <div class="card">
-                            <h5 class="card-header">
-                                <span class="align-middle">{{ answer.comments | length }} comment</span>
-                            </h5>
-                            <div class="card-body">
-                                {% for comment in answer.comments %}
-                                <div>
-                                    <img alt="" class="d-inline-block align-middle"
-                                         height="20"
-                                         loading="lazy"
-                                         src="../static/image/bootstrap-icon/person-fill.svg" style="margin-left: 0px" width="20">
-                                    <span class="align-middle"
-                                          style="font-weight: bold">{{ comment.username }}</span>
-                                </div>
-
-                                <p class="card-text" style="margin-top: 20px">{{ comment.content }}</p>
-                                <hr>
-                                {% endfor %}
-                            </div>
-                            <div class="card-footer">
-                                <div class="container">
-                                    <div class="row">
-                                        <span style="display: none">{{ answer.id }}</span>
-                                        <input class="form-control col-10 comment-text" placeholder="Write your comment..."
-                                               type="text">
-                                        <span class="col-1"> </span>
-                                        <button class="btn form-control col-1 btn-outline-primary submit-comment">
-                                            Post
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+<div class="page-header">
+    <div class="page-container">
+        <ul class="breadcrumb">
+            <li><a href="/forum">论坛</a></li>
+            <li class="breadcrumb-sep">/</li>
+            <li>问题详情</li>
+        </ul>
     </div>
 </div>
 
+<div class="page-container" style="max-width:800px;">
+    <!-- 问题 -->
+    <div class="question-detail">
+        <div class="question-title">{{ question.title }}</div>
+        <div class="question-body">{{ question.question }}</div>
+    </div>
+
+    <!-- 回答列表 -->
+    <h2 style="margin-bottom:var(--space-lg);">
+        <i class="bi bi-chat-left-text"></i> 回答
+        <span style="font-size:0.9rem;font-weight:400;color:var(--color-text-secondary);">（{{ answers | length }} 条）</span>
+    </h2>
+
+    {% if answers | length == 0 %}
+    <div class="empty-state">
+        <div class="empty-icon"><i class="bi bi-chat"></i></div>
+        <p>该问题还没得到解答</p>
+    </div>
+    {% endif %}
+
+    {% for answer in answers %}
+    <div class="answer-item">
+        <div class="answer-header">
+            <div class="answer-avatar"><i class="bi bi-person-fill"></i></div>
+            <span style="font-weight:600;font-size:0.9rem;">匿名用户</span>
+        </div>
+        <div class="answer-text">{{ answer.content }}</div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}

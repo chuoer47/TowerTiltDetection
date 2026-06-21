@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
+{% block title %}项目信息 - 杆塔倾斜检测{% endblock %}
+{% block nav_active %}nav-info{% endblock %}
 {% block content %}
-<script src="../static/script/info.js"></script>
-<link href="../static/css/forum.css" media="all" rel="stylesheet" type="text/css">
-<div class="container">
-    <h1 style="margin-top:150px;margin-left:30px;">项目一览</h1>
-    <div class="forum-container">
-        <div class="left_row">
-            <div class="navi-forum"></div>
-            <div class="forum-info">
-                {% for article in articles %}
-                <div class="forum-msg">
-                    <div class="content">
-                        <div class="title">{{ article.title }}</div>
-                        <div class="otherItem">
-                            <p class="time" style="font-size:15px;"></p>
-                            <a class="check-answer" href="/article{{ article.id }}">查看文章</a>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
 
-        <div class="right_row">
-            <div class="news-info">
+<div class="page-header">
+    <div class="page-container">
+        <h1><i class="bi bi-journal-text"></i> 项目信息</h1>
+        <p class="subtitle">了解杆塔倾斜检测项目的研究内容与技术方案</p>
+    </div>
+</div>
+
+<div class="page-container">
+    <div class="forum-list">
+        {% for article in articles %}
+        <div class="forum-card">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+                <div>
+                    <div class="forum-title">{{ article.title }}</div>
+                    <p style="margin:0;font-size:0.9rem;color:var(--color-text-secondary);text-indent:0;">
+                        点击查看详细内容
+                    </p>
+                </div>
+                <a class="btn btn-outline btn-sm" href="/article/{{ article.id }}">
+                    <i class="bi bi-arrow-right"></i> 查看文章
+                </a>
             </div>
         </div>
+        {% endfor %}
     </div>
 </div>
 
